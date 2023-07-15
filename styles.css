@@ -1,0 +1,171 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0faff;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #4a78f7;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav .menuOpen {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav .nav-links .menuClose {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none;
+}
+
+.nav .nav-links li a {
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.nav .nav-links li a:hover {
+  opacity: 0.8;
+}
+
+.nav .search-icon {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  transition: 0.3s linear;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav.showSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav .search-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4a78f7;
+}
+
+.nav .search-box input {
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 0 15px 0 45px;
+  background: #fff;
+}
+
+@media (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+
+  .nav .search-box {
+    right: 150px;
+  }
+}
+
+@media (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    gap: 30px;
+    background: #11101d;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s linear;
+    z-index: 100;
+  }
+
+  .nav.showMenu .nav-links {
+    left: 0;
+  }
+
+  .nav .menuOpen {
+    display: block;
+  }
+
+  .nav .nav-links .menuClose {
+    display: block;
+  }
+
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
